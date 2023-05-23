@@ -41,6 +41,7 @@
 }
 .dashboard-link:hover {
   color: #198754;
+  font-weight: bolder;
 } 
 
 .footer-content {
@@ -48,11 +49,25 @@
   text-align: center;
 }
 
+.students-content {
+  margin-top: 7vh;
+}
+
+.student {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: flex-start;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 600px) {
   .dashboard-content {
     width: 80%;
     margin: 30px;
     transform: translateX(5%);
+    margin-top: 5px;
   }
   .row-1 {
     display: flex;
@@ -83,5 +98,14 @@
   }
   .dashboard-content p {
     text-align: right;
+  }
+  .student {
+    width: 20%;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 768px) {
+  .student {
+    margin-top: 10px;
   }
 }
