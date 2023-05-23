@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "../styles/pages.css";
 import Input from "./input";
+import heplerFunctions from "./helperFunctions";
 
-const Form = ({ label, handleSubmit }) => {
+const Form = ({ label, header }) => {
   const [state, setState] = useState({ username: "", email: "", password: "" });
 
   const handleChange = (event) => {
@@ -47,12 +48,13 @@ const Form = ({ label, handleSubmit }) => {
             placeholder: "Password",
           },
         ];
+  const canClick = (state.username && state.password) || state.email;
 
   return (
     <div className="container mt-5 form-content">
       <h1 className="text-center">XXX Sxhool</h1>
       <p className="h2 text-center mb-5">
-        Are you an Admin? <span className="text-success">{label}</span>
+        {header} <span className="text-success">{label}</span>
       </p>
       <form>
         {inputAttributes.map((attribute, index) => (
@@ -61,7 +63,16 @@ const Form = ({ label, handleSubmit }) => {
         <button
           type="button"
           className="btn btn-success form-control mt-5 mb-5"
-          onClick={handleSubmit}
+          onClick={() =>
+            label !== "Login"
+              ? heplerFunctions.handleRegisterAdmin(
+                  state.username,
+                  state.email,
+                  state.password
+                )
+              : heplerFunctions.handleLogin(state.username, state.password)
+          }
+          disabled={!canClick}
         >
           {label}
         </button>

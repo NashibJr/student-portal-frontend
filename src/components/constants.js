@@ -1,4 +1,5 @@
 export const links = [
+  { label: "Dashboard", route: "/dashboard" },
   { label: "All Students", route: "/students" },
   { label: "Admins", route: "/admins" },
   { label: "Upload marks", route: "/upload" },

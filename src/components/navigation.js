@@ -12,18 +12,18 @@ const NavigationBar = () => {
           School X
         </a>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#mynavbar"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="mynavbar">
           <ul className="navbar-nav me-auto d-flex">
             {links.map((link) => (
               <Link
-                key={link.linkLabel}
+                key={link.label}
                 label={link.label}
                 route={link.route}
                 anchorClassName="nav-link"

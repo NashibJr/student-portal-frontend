@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
-import NavigationBar from "./components/navigation";
-import client from "./app/client";
-import Login from "./pages/login";
+import React from "react";
+// import Login from "./pages/login";
+import Dashboard from "./pages/dashboard";
 
 const App = () => {
   return (
-    <div className="container">
-      <Login />
+    <div>
+      <Dashboard />
     </div>
   );
 };

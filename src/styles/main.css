@@ -11,36 +11,30 @@
 @media only screen and (min-width: 680px) { 
   #mynavbar {
     flex: auto;
+    transform: translateX(10%);
+  }  
+}
+
+@media only screen and (min-width: 810px) and (max-width: 970px) { 
+  #mynavbar {
     transform: translateX(20%);
   }  
 }
 
-@media only screen and (min-width: 750px) { 
+@media only screen and (min-width: 970px) and (max-width: 1120px) { 
   #mynavbar {
-    transform: translateX(25%);
+    transform: translateX(30%);
   }  
 }
 
-@media only screen and (min-width: 810px) { 
+@media only screen and (min-width: 1121px) and (max-width: 1200px) { 
   #mynavbar {
     transform: translateX(40%);
   }  
 }
 
-@media only screen and (min-width: 970px) { 
+@media screen and (min-width: 1201px) {
   #mynavbar {
     transform: translateX(50%);
-  }  
-}
-
-@media only screen and (min-width: 1130px) { 
-  #mynavbar {
-    transform: translateX(60%);
-  }  
-}
-
-@media only screen and (min-width: 1280) { 
-  #mynavbar {
-    transform: translateX(70%);
-  }  
+  } 
 }
