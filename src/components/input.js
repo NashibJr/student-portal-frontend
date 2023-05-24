@@ -12,6 +12,7 @@ const Input = ({
       className="form-control mt-3"
       onChange={handleChange}
       placeholder={placeholder}
+      disabled={placeholder === "Password!" ? true : false}
     />
   );
 };

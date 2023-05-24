@@ -4,7 +4,7 @@ import Input from "./input";
 import heplerFunctions from "./helperFunctions";
 
 const Form = ({ label, header }) => {
-  const [state, setState] = useState({ username: "", email: "", password: "" });
+  const [state, setState] = useState({ username: "", password: "" });
 
   const handleChange = (event) => {
     event.preventDefault();
@@ -12,43 +12,21 @@ const Form = ({ label, header }) => {
   };
 
   // input attributes.
-  const inputAttributes =
-    label === "Login"
-      ? [
-          {
-            type: "text",
-            name: "username",
-            value: state.username,
-            placeholder: "Username",
-          },
-          {
-            type: "password",
-            name: "password",
-            value: state.password,
-            placeholder: "Password",
-          },
-        ]
-      : [
-          {
-            type: "text",
-            name: "username",
-            value: state.username,
-            placeholder: "Username",
-          },
-          {
-            type: "email",
-            name: "email",
-            value: state.email,
-            placeholder: "Email",
-          },
-          {
-            type: "password",
-            name: "password",
-            value: state.password,
-            placeholder: "Password",
-          },
-        ];
-  const canClick = (state.username && state.password) || state.email;
+  const inputAttributes = [
+    {
+      type: "text",
+      name: "username",
+      value: state.username,
+      placeholder: "Username",
+    },
+    {
+      type: "password",
+      name: "password",
+      value: state.password,
+      placeholder: "Password",
+    },
+  ];
+  const canClick = state.username && state.password;
 
   return (
     <div className="container mt-5 form-content">
@@ -63,15 +41,7 @@ const Form = ({ label, header }) => {
         <button
           type="button"
           className="btn btn-success form-control mt-5 mb-5"
-          onClick={() =>
-            label !== "Login"
-              ? heplerFunctions.handleRegisterAdmin(
-                  state.username,
-                  state.email,
-                  state.password
-                )
-              : heplerFunctions.handleLogin(state.username, state.password)
-          }
+          onClick={heplerFunctions.handleLogin(state.username, state.password)}
           disabled={!canClick}
         >
           {label}

@@ -1,6 +1,5 @@
 export const links = [
   { label: "Dashboard", route: "/dashboard" },
-  { label: "All Students", route: "/students" },
   { label: "Admins", route: "/admins" },
   { label: "Upload marks", route: "/upload" },
 ];
@@ -21,4 +20,9 @@ export const classes = [
 export const profile = [
   { label: "Settings", route: "/settings" },
   { label: "Logout", route: "/" },
+];
+
+export const students = [
+  { label: "All students", route: "/students" },
+  { label: "Register new student", route: "/students/register" },
 ];

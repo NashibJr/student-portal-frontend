@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Student from "../components/student";
+import Character from "../components/character";
 import studentIcon from "../icons/students.jpg";
 import NavigationBar from "../components/navigation";
 import Input from "../components/input";
@@ -47,6 +47,7 @@ const Students = () => {
         <NavigationBar />
       </div>
       <div className="row mt-5">
+        <p className="fw-bold">Students</p>
         <form>
           {attributes.map((attribute, index) => (
             <Input
@@ -59,7 +60,7 @@ const Students = () => {
       </div>
       <div className="row mt-5">
         {renderStudents?.map((student) => (
-          <Student
+          <Character
             key={student._id}
             image={studentIcon}
             name={student.fullname}

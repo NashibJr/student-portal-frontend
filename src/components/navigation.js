@@ -1,5 +1,5 @@
 import React from "react";
-import { classes, links, profile } from "./constants";
+import { classes, links, profile, students } from "./constants";
 import Link from "./linkList";
 import Dropdown from "./dropdownLinks";
 import "../styles/main.css";
@@ -30,6 +30,7 @@ const NavigationBar = () => {
                 listClassName="nav-item"
               />
             ))}
+            <Dropdown dropdownItems={students} label="Students" />
             <Dropdown dropdownItems={classes} label="Classes" />
             <Dropdown dropdownItems={profile} label="User" />
           </ul>

@@ -21,10 +21,11 @@ const heplerFunctions = {
         email,
         password,
       });
-      const { message } = data.data.admin;
-      alert(`${message}`);
+      return data;
     } catch (error) {
-      alert(error.message);
+      return {
+        message: error.message,
+      };
     }
   },
 
@@ -33,7 +34,7 @@ const heplerFunctions = {
       const data = await app.studentsClient.get();
       return data;
     } catch (error) {
-      console.log(error);
+      return error;
     }
   },
 
@@ -41,7 +42,7 @@ const heplerFunctions = {
     try {
       return await app.adminsClient.get();
     } catch (error) {
-      console.log(error);
+      return error;
     }
   },
 
@@ -49,7 +50,23 @@ const heplerFunctions = {
     try {
       return await app.marksClient.get();
     } catch (error) {
-      console.log(error);
+      return error;
+    }
+  },
+
+  registerStudents: async (id, fullname, password, class_, address, house) => {
+    try {
+      const data = await app.studentsClient.post("", {
+        id,
+        fullname,
+        password,
+        class_,
+        address,
+        house,
+      });
+      return data;
+    } catch (error) {
+      return error;
     }
   },
 };

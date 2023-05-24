@@ -1,6 +1,6 @@
 import React from "react";
 
-const Student = ({ image, name, class_ }) => {
+const Character = ({ image, name, class_ }) => {
   return (
     <div className="student dashboard-content border p-3 d-flex flex-column">
       <img src={image} width="15%" height="50%" alt="" />
@@ -10,4 +10,4 @@ const Student = ({ image, name, class_ }) => {
   );
 };
 
-export default Student;
+export default Character;

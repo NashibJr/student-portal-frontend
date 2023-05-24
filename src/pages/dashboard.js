@@ -6,6 +6,7 @@ import students from "../icons/students.jpg";
 import admin from "../icons/admin.jpg";
 import classes from "../icons/classes.jpg";
 import results from "../icons/results.jpg";
+import Footer from "../components/footer";
 
 const Dashboard = () => {
   const [state, setState] = useState({
@@ -51,11 +52,7 @@ const Dashboard = () => {
         ))}
       </div>
       <div className="row">
-        <footer className="footer-content">
-          <p>
-            All rights reserved <strong>@schoolx 2023</strong>
-          </p>
-        </footer>
+        <Footer />
       </div>
     </div>
   );
