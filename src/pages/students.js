@@ -65,6 +65,7 @@ const Students = () => {
             image={studentIcon}
             name={student.fullname}
             class_={student._class}
+            house={student.house}
           />
         ))}
       </div>
