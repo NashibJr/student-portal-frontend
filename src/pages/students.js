@@ -64,7 +64,7 @@ const Students = () => {
             key={student._id}
             image={studentIcon}
             name={student.fullname}
-            class_={student.class}
+            class_={student._class}
           />
         ))}
       </div>

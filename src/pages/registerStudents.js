@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Input from "../components/input";
+import heplerFunctions from "../components/helperFunctions";
 
 const RegisterStudents = () => {
   const [state, setState] = useState({
@@ -45,7 +46,9 @@ const RegisterStudents = () => {
     { type: "house", name: "house", value: state.house, placeholder: "House" },
   ];
 
-  // const postStudents=async()=>{}
+  const canSubmit =
+    state.id && state.fullname && state.class_ && state.house && state.address;
+
   return (
     <div className="container mt-5 form-content">
       <h2>Register New Student</h2>
@@ -62,7 +65,31 @@ const RegisterStudents = () => {
       </form>
       <div className="row  mt-5 mb-3">
         <div className="col-sm-7">
-          <button type="button" className="btn btn-success w-100 mt-2">
+          <button
+            type="button"
+            className="btn btn-success w-100 mt-2"
+            onClick={async (event) => {
+              event.preventDefault();
+              const data = await heplerFunctions.registerStudents(
+                state.id,
+                state.fullname,
+                state.password,
+                state.class_,
+                state.address,
+                state.house
+              );
+              alert(data.data.student.message);
+              setState({
+                id: state.id,
+                fullname: "",
+                password: "123456",
+                class_: "",
+                address: "",
+                house: "",
+              });
+            }}
+            disabled={!canSubmit}
+          >
             Register
           </button>
         </div>

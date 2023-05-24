@@ -54,13 +54,13 @@ const heplerFunctions = {
     }
   },
 
-  registerStudents: async (id, fullname, password, class_, address, house) => {
+  registerStudents: async (_id, fullname, password, _class, address, house) => {
     try {
       const data = await app.studentsClient.post("", {
-        id,
+        _id,
         fullname,
         password,
-        class_,
+        _class,
         address,
         house,
       });
