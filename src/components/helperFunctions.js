@@ -70,6 +70,21 @@ const heplerFunctions = {
       return error;
     }
   },
+
+  uploadMarks: async (student, year, term, subject, mark) => {
+    try {
+      const data = await app.marksClient.post("", {
+        student,
+        year,
+        term,
+        subject,
+        mark,
+      });
+      return data;
+    } catch (error) {
+      return error;
+    }
+  },
 };
 
 export default heplerFunctions;

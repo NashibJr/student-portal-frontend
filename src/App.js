@@ -5,11 +5,12 @@ import RegisterStudents from "./pages/registerStudents";
 // import Dashboard from "./pages/dashboard";
 import Students from "./pages/students";
 import Results from "./pages/results";
+import UploadMarks from "./pages/uploadmarks";
 
 const App = () => {
   return (
     <div>
-      <Results />
+      <UploadMarks />
     </div>
   );
 };

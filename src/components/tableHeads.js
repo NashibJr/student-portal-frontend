@@ -12,8 +12,8 @@ const TableHeads = () => {
   ];
   return (
     <tr>
-      {tableheads.map((head) => (
-        <th>{head}</th>
+      {tableheads.map((head, index) => (
+        <th key={index}>{head}</th>
       ))}
     </tr>
   );
