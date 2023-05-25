@@ -19,7 +19,7 @@ const Dashboard = () => {
   const fetchData = async () => {
     const students = await heplerFunctions.getStudents();
     const admins = await heplerFunctions.getAdmins();
-    const marks = await heplerFunctions.getMarks();
+    const marks = await heplerFunctions.getResults();
     setState({
       students: students.data.students,
       admins: admins.data.admins,

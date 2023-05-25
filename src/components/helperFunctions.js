@@ -46,14 +46,6 @@ const heplerFunctions = {
     }
   },
 
-  getMarks: async () => {
-    try {
-      return await app.marksClient.get();
-    } catch (error) {
-      return error;
-    }
-  },
-
   registerStudents: async (_id, fullname, password, _class, address, house) => {
     try {
       const data = await app.studentsClient.post("", {
@@ -64,6 +56,15 @@ const heplerFunctions = {
         address,
         house,
       });
+      return data;
+    } catch (error) {
+      return error;
+    }
+  },
+
+  getResults: async () => {
+    try {
+      const data = await app.marksClient.get();
       return data;
     } catch (error) {
       return error;
