@@ -1,22 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Character from "../components/character";
-import studentIcon from "../icons/students.jpg";
-import NavigationBar from "../components/navigation";
-import Input from "../components/input";
 import heplerFunctions from "../components/helperFunctions";
+import StudentPage from "../components/studentsPage";
 
 const Students = () => {
-  const [studentName, setStudentName] = useState("");
   const [students, setStudents] = useState([]);
-  const [results, setResults] = useState([]);
-  const attributes = [
-    {
-      type: "text",
-      name: "studentName",
-      value: studentName,
-      placeholder: "Search students",
-    },
-  ];
 
   const getStudents = async () => {
     try {
@@ -27,50 +14,11 @@ const Students = () => {
     }
   };
 
-  const handleSearch = () => {
-    const searhedStudents = students.filter((student) =>
-      student.fullname.includes(studentName)
-    );
-    setResults(searhedStudents);
-  };
-
-  const renderStudents = results.length === 0 ? students : results;
-
   useEffect(() => {
-    handleSearch();
     getStudents();
-  }, [studentName]);
+  }, [null]);
 
-  return (
-    <div className="container students-content">
-      <div className="row mb-5">
-        <NavigationBar />
-      </div>
-      <div className="row mt-5">
-        <p className="fw-bold">Students</p>
-        <form>
-          {attributes.map((attribute, index) => (
-            <Input
-              key={index}
-              values={attribute}
-              handleChange={(event) => setStudentName(event.target.value)}
-            />
-          ))}
-        </form>
-      </div>
-      <div className="row mt-5">
-        {renderStudents?.map((student) => (
-          <Character
-            key={student._id}
-            image={studentIcon}
-            name={student.fullname}
-            class_={student._class}
-            house={student.house}
-          />
-        ))}
-      </div>
-    </div>
-  );
+  return <StudentPage students={students} />;
 };
 
 export default Students;

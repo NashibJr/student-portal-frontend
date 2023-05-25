@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Input from "./input";
 import heplerFunctions from "./helperFunctions";
+import Footer from "./footer";
 
 const RegisterAdmin = () => {
   const [state, setState] = useState({
@@ -110,6 +111,9 @@ const RegisterAdmin = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="row">
+        <Footer />
       </div>
     </div>
   );
